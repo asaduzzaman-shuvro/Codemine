@@ -13,7 +13,7 @@ public func stringFromHtml(string: String) -> NSAttributedString? {
         let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
         if let d = data {
             let str = try NSAttributedString(data: d,
-                                             options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                                             options: [.documentType: NSAttributedString.DocumentType.html],
                                              documentAttributes: nil)
             return str
         }
